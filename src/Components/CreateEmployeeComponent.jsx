@@ -54,7 +54,7 @@ import withNavigateHook from './withNavigateHook';
       console.log('employee =>' + JSON.stringify(employee));  
 
 
-      if(this.state.id === -1){
+      if(this.state.id == -1){
         EmployeeService.createEmployee(employee).then(res => {
           this.props.navigation('/employees');
         })

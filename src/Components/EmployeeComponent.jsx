@@ -23,6 +23,9 @@ class EmployeeComponent extends Component {
 
     
     }
+    viewEmployee(id){
+      this.props.navigation(`/view-employee/${id}`)
+    }
 
    editEmployee(id){
     this.props.navigation(`/add-employee/${id}`)
@@ -46,6 +49,7 @@ class EmployeeComponent extends Component {
         <div className='row'>
           <button className='btn btn-primary' onClick={this.addEmployee}> Add Employee </button>
         </div>
+        <br></br>
             <div className="row">
                <table className="table table-striped table-bordered">
             <thead className='thead-dark'>
@@ -67,6 +71,7 @@ class EmployeeComponent extends Component {
                         <td>
                           <button onClick={() => this.editEmployee(employee.id)} className="btn btn-info"> Update </button>
                           <button onClick={() => this.deleteEmployee(employee.id)} style={{marginLeft: '15px'}} className="btn btn-danger"> Delete</button>
+                          <button onClick={() => this.viewEmployee(employee.id)} style={{marginLeft: '15px'}} className="btn btn-info"> View</button>
                         </td>
                         
                     </tr>
